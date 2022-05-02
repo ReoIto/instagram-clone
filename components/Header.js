@@ -35,18 +35,13 @@ export default function Header() {
         <div className="flex space-x-4 items-center">
           <HomeIcon className="hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
           <PlusCircleIcon className="h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
-          <img
+          <Image
             src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png"
             alt="user image"
-            className="h-10 rounded-full cursor-pointer"
+            height={45}
+            width={60}
+            className="object-contain rounded-full"
           />
-          {/* <Image
-          src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png"
-          alt="user image"
-          height={40}
-          width={40}
-          className="object-contain rounded-full"
-        /> */}
         </div>
       </div>
     </div>
