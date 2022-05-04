@@ -4,15 +4,14 @@ import { useEffect, useState } from "react";
 import Story from "./Story";
 
 export default function Stories() {
-  const [storyUsers, setStoryusers] = useState([]);
+  const [storyUsers, setStoryUsers] = useState([]);
   useEffect(() => {
     const storyUsers = minifaker.array(20, (i) => ({
       username: minifaker.username({ local: "en" }).toLowerCase(),
       img: `https://i.pravatar.cc/150?img=${Math.ceil(Math.random() * 70)}`,
       id: i,
     }));
-    setStoryusers(storyUsers);
-    console.log(storyUsers);
+    setStoryUsers(storyUsers);
   }, []);
 
   return (
