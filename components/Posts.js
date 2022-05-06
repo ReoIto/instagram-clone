@@ -5,17 +5,19 @@ export default function Posts() {
     {
       id: "1",
       userName: "user_1",
-      userImg:
+      userImgPath:
         "https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png",
-      img: "https://unsplash.com/photos/Qg1TnRL1f6M",
+      imgPath:
+        "https://images.unsplash.com/photo-1651773555309-30fc9c8d2855?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       caption: "This is a caption on a post of user_1",
     },
     {
       id: "2",
       userName: "user_2",
-      userImg:
+      userImgPath:
         "https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png",
-      img: "https://unsplash.com/photos/Fv1xEBeAh1o",
+      imgPath:
+        "https://images.unsplash.com/photo-1651740895859-cfb21af2f62a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       caption: "This is a caption on a post of user_2",
     },
   ];
@@ -27,7 +29,8 @@ export default function Posts() {
           key={post.id}
           id={post.id}
           userName={post.userName}
-          img={post.img}
+          userImgPath={post.userImgPath}
+          postImgPath={post.imgPath}
           caption={post.caption}
         />
       ))}

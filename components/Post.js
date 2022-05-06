@@ -1,16 +1,37 @@
-export default function Post({ id, userName, userImg, img, caption }) {
+import { username } from "minifaker";
+import { DotsHorizontalIcon } from "@heroicons/react/solid";
+
+export default function Post({
+  id,
+  userName,
+  userImgPath,
+  postImgPath,
+  caption,
+}) {
   return (
-    <div>
-      <h1>{userName}</h1>
+    <div className="bg-white my-7 border rounded-md">
+      {/* Post Header */}
+      <div className="flex items-center p-5">
+        <img
+          className="h-12 rounded-full object-cover border p-1 mr-3"
+          src={userImgPath}
+          alt={userName}
+        />
+        <p className="font-bold flex-1">{userName}</p>
+        <DotsHorizontalIcon className="h-5 cursor-pointer" />
+      </div>
+
+      {/* Post Image */}
+      <img className="object-cover w-full" src={postImgPath} />
     </div>
   );
 }
 
-// {
-//   id: "1",
-//   userName: "user_1",
-//   userImg:
-//     "https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png",
-//   img: "https://unsplash.com/photos/Qg1TnRL1f6M",
-//   caption: "This is a caption on a post of user_1",
-// },
+// <Post
+//   key={post.id}
+//   id={post.id}
+//   userName={post.userName}
+//   userImgPath={post.userImgPath}
+//   postImgPath={post.imgPath}
+//   caption={post.caption}
+// />
