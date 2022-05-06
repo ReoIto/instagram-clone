@@ -1,5 +1,10 @@
 import { username } from "minifaker";
-import { DotsHorizontalIcon } from "@heroicons/react/solid";
+import {
+  DotsHorizontalIcon,
+  HeartIcon,
+  ChatIcon,
+  BookmarkIcon,
+} from "@heroicons/react/outline";
 
 export default function Post({
   id,
@@ -23,15 +28,15 @@ export default function Post({
 
       {/* Post Image */}
       <img className="object-cover w-full" src={postImgPath} />
+
+      {/* Post buttons */}
+      <div className="flex justify-between px-4 pt-4">
+        <div className="flex space-x-4">
+          <HeartIcon className="btn" />
+          <ChatIcon className="btn" />
+        </div>
+        <BookmarkIcon className="btn" />
+      </div>
     </div>
   );
 }
-
-// <Post
-//   key={post.id}
-//   id={post.id}
-//   userName={post.userName}
-//   userImgPath={post.userImgPath}
-//   postImgPath={post.imgPath}
-//   caption={post.caption}
-// />
