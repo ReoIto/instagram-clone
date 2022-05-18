@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { SearchIcon, PlusCircleIcon } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
+import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 export default function Header() {
+  const { data: session } = useSession();
+
   return (
     <div className="shadow-md border-b sticky top-0 bg-white">
       <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
@@ -34,14 +38,21 @@ export default function Header() {
         </div>
         <div className="flex space-x-4 items-center">
           <HomeIcon className="hidden md:inline-flex h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
-          <PlusCircleIcon className="h-6 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
-          <Image
-            src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-md-memoji_2x.png"
-            alt="user image"
-            height={45}
-            width={60}
-            className="object-contain rounded-full"
-          />
+          {session ? (
+            <>
+              <PlusCircleIcon className="h-6 pr-5 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
+              <Image
+                onClick={signOut}
+                src={session.user.image}
+                alt="user image"
+                height={40}
+                width={40}
+                className="object-contain rounded-full"
+              />
+            </>
+          ) : (
+            <Link href="/auth/signin">SignIn</Link>
+          )}
         </div>
       </div>
     </div>
