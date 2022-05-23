@@ -3,7 +3,6 @@ import { modalState } from "../atom/modalAtom";
 import Modal from "react-modal";
 import { CameraIcon } from "@heroicons/react/outline";
 import { useRef, useState } from "react";
-import Image from "next/image";
 
 export default function UploadModal() {
   const [open, setOpen] = useRecoilState(modalState);
