@@ -75,7 +75,6 @@ export default function UploadModal() {
 
   return (
     <div>
-      <div>UploadModal</div>
       <Modal
         isOpen={open}
         onRequestClose={onClickClose}
